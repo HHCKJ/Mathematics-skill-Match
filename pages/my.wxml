@@ -1,0 +1,9 @@
+<view class="login">
+<image src="{{src}}"></image>
+<text>{{name}}</text>
+<text>-----------</text>
+<button open-type="getUserInfo" bindgetuserinfo="getMyInfo">点击登录</button>
+<!-- open-type="getUserInfo"表示激活获取微信用户信息功能，其中getUserInfo是固定的不能自己取名 -->
+<!-- bindgetuserinfo="getMyInfo"表示将获得的数据传递给自定义函数getMyInfo，这里的getMyInfo可以自己取名 -->
+<text>-----------</text>
+</view>

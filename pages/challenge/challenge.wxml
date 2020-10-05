@@ -1,0 +1,4 @@
+<view class="container">
+<image bindtap="fast" src="/image/fast.png"></image>
+<image bindtap="noMiss" src="/image/noMiss.png"></image>
+</view>

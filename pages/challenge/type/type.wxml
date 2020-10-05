@@ -1,0 +1,7 @@
+<view class="container">
+<text>-----------------------------------</text>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      请点击此处选择题型：{{array[index]}}
+  </picker>
+<text>-----------------------------------</text>
+</view>

@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/my",
+    "pages/navigation",
+    "pages/shopping/shopping",
+    "pages/shopping/inputinformation/inputinformation",
+    "pages/shopping/exchangerecord/exchangerecord",
+    "pages/challenge/challenge",
+    "pages/challenge/type/type",
+    "pages/challenge/type/testing/testing"
+  ],
+  "networkTimeout":{"request":60000
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小学数学技能大赛",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/navigation",
+        "text": "首页",
+        "iconPath": "image/homePage.png",
+        "selectedIconPath": "image/homePage_selected.png"
+      },
+      {
+        "pagePath": "pages/my",
+        "text": "我的",
+        "iconPath": "image/my.png",
+        "selectedIconPath": "image/my_selected.png"
+      }
+    ]
+  }
+}

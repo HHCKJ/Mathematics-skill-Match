@@ -1,0 +1,25 @@
+<!--pages/shopping/inputinformation/inputinformation.wxml-->
+<view>
+  <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+</view>
+<view>
+  <view class="good">
+    <image class="good_img" src="{{good.img}}"></image>
+    <text decode="{{true}}" style="text-align:center">{{good.name}}&nbsp;&nbsp;{{good.fee}}&nbsp;&nbsp;&nbsp;&nbsp;</text>
+
+
+    <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+  </view>
+
+  <form bindsubmit="formSubmit">
+    <view class="inputs">
+      <text style="text-align:center">请填写收货人</text>
+      <input class="input" name="contact"></input>
+      <text style="text-align:center">请填写收货地址</text>
+      <input class="input" name="address"></input>
+      <text style="text-align:center">请填写联系电话</text>
+      <input class="input" name="tel"></input>
+      <button class="input" form-type="submit">提交</button>
+    </view>
+  </form>
+</view>

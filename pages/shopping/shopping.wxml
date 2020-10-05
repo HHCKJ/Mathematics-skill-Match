@@ -1,0 +1,28 @@
+<!--pages/shopping/shopping.wxml-->
+
+
+<view class="userinfo">
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <block wx:else>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"  mode="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </block>
+  <text>可用积分{{userInfo.points}}</text>
+  <text decode="{{true}}"> &nbsp;</text>
+  <text style="align-items: center">  请选择你要兑换的商品</text>
+</view>
+<radio-group bindchange="radiochange">
+  <view class="goods">
+    <view wx:for="{{goods}}" wx:key="index" wx:for-item="goods" class="good">
+      <image class="good_img" src="{{goods.img}}"></image>
+      <text decode="{{true}}" style="font-weight:600;">{{goods.name}}&nbsp;&nbsp;{{goods.fee}}分&nbsp;&nbsp;&nbsp;&nbsp;剩余{{goods.num}}件</text>
+      <radio value="{{goods.non}}"></radio>
+      <text decode="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    </view>
+  </view>
+</radio-group>
+<text decode="{{true}}"> &nbsp;</text> {{goodcode}}
+<button style="background-color:#90EE90" bindtap="confirm"> 确定</button>
+<text decode="{{true}}"> &nbsp;</text>
+
+<button style="background-color:#90EE90" bindtap="Erecord"> 查看兑换记录</button>

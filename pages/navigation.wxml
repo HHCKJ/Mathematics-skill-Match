@@ -1,0 +1,7 @@
+<view class="Container">
+<image bindtap="challenge" src="/image/challenge.jpg"></image>
+<image bindtap="answer" src="/image/answer.png"></image>
+<image bindtap="report" src="/image/report.png"></image>
+<image bindtap="pay" src="/image/pay.png"></image>
+<image bindtap="Shopping" src="/image/shop.png"></image>
+</view>

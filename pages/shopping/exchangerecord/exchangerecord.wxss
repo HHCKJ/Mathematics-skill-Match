@@ -1,0 +1,28 @@
+/* pages/shopping/exchangerecord/exchangerecord.wxss */
+.table{
+
+  border: 1px solid  #ccc;
+  width: 100%;
+}
+.tr{
+
+width: 100%;
+font-size: 14rpx;
+display: flex;
+justify-content: space-between;
+}
+
+.th{
+   margin: 0 auto;
+  text-align: center;
+  font-weight: 900;
+  background: #B4EEB4;
+  font-size: 35rpx;
+
+}
+.td{
+padding: 0px;
+width: 100%;
+text-align: center;
+font-size: 28rpx;
+}

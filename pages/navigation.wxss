@@ -1,0 +1,15 @@
+.Container
+{
+  display: flex;/*启用flex布局方法*/
+  flex-direction:column;/*用于设置主轴方向，column属性为主轴在垂直方向上从上而下，项目按照主轴方向从上往下排列*/
+  align-items: center;/*用于设置项目在行中的对齐方式，center属性为项目在交叉轴中居中对齐*/
+  justify-content: space-between;/*垂直方向分散布局，用于设置项目在主轴方向上的对齐方式，以及分配项目之间及其周围多余的空间,between属性为项目间距相等，第一个和最后一个项目分别离起点/终点的距离为0*/
+}
+
+
+image
+{
+  height: 200rpx;
+  margin: 5rpx;
+  border: 5rpx solid black;
+}

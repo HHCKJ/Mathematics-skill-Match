@@ -1,0 +1,45 @@
+<!--pages/shopping/exchangerecord/exchangerecord.wxml-->
+<image class="user_img" src="{{userInfo.avatarUrl}}"></image>
+
+<view class="table">
+  <view class="tr">
+    <view class="th">商品</view>
+    <view class="th">消费</view>
+    <view class="th">剩余</view>
+    <view class="th">兑换时间</view>
+  </view>
+
+
+   <view class="tr" wx:for="{{record}}" wx:for-item="Erecord">
+
+<view class="td">{{Erecord.goodsname}}</view>
+<view class="td">{{Erecord.points}}</view>
+<view class="td">{{Erecord.surplus}}</view>
+<view class="td">{{Erecord.date}}</view>
+
+
+
+</view>
+
+
+</view>
+
+<!--<view class="record">
+
+  <view wx:for="{{record}}" wx:for-item="Erecord">
+
+<view>{{Erecord.goodsname}}<text decode="{{true}}">&nbsp;&nbsp;</text>
+{{Erecord.points}}<text decode="{{true}}">&nbsp;&nbsp;</text>
+{{Erecord.surplus}}<text decode="{{true}}">&nbsp;&nbsp;</text>
+{{Erecord.date}}<text decode="{{true}}">&nbsp;&nbsp;</text>
+
+
+
+</view>
+
+
+</view>
+
+</view>-->
+
+

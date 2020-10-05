@@ -1,0 +1,125 @@
+//app.js
+App({
+  onLaunch: function () {
+    // 展示本地存储能力
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
+    var that = this;
+    // 登录
+    wx.login({
+      success: res => {
+        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      }
+    })
+    // 获取用户信息
+
+    
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              console.log("控制台昵称"+res);
+              // 可以将 res 发送给后台解码出 unionId
+              this.globalData.userInfo = res.userInfo
+              console.log(res.userInfo.nickName);
+              console.log(this.globalData.userInfo.nickName);    
+              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+              // 所以此处加入 callback 以防止这种情况
+              if (this.userInfoReadyCallback) {
+                this.userInfoReadyCallback(res)
+              }
+
+
+
+         //    var that = this;
+              wx.request({
+              
+
+
+                url: 'http://localhost:8080/practice/goods.do?mark=user',
+
+
+
+                dataType: 'json',
+                 data: { nickname: that.globalData.userInfo.nickName },
+                method: "get",
+
+                header: { 'content-type': 'application/json' },
+
+                success: function (res) {
+                  console.log("说我没错误了");
+                  console.log(res.data);
+                  console.log("说我没错误了2");
+                  res = res.data;
+                  console.log(that.globalData.userInfo);
+
+                  that.globalData.userInfo.points=res.user.points;
+                
+                  //console.log(that.globalData.userInfo.points);
+                  //that.setData({ globalData.userInfo: res.goods });
+
+
+                },
+
+                fail: function (res) { console.log("失败d"); console.error(res); }
+
+              })
+
+
+            }
+          })
+
+          
+
+          
+
+
+
+        }
+      }
+    })
+
+
+  //  console.log("控制台昵称"+that.globalData.userInfo.nickName),
+    /*var that = this;
+    wx.request({
+      
+     
+
+      url: 'http://192.168.142.1:8080/practice/goods.do?mark=user',
+
+
+
+      dataType: 'json',
+     // data: { nickname: that.globalData.userInfo.nickName },
+      method: "get",
+
+      header: { 'content-type': 'application/json' },
+
+      success: function (res) {
+        console.log(res.data);
+        res = res.data;
+        //that.setData({ globalData.userInfo: res.goods });
+
+
+      },
+
+      fail: function (res) { console.log("失败d"); console.error(res); }
+
+    })*/
+
+
+  },
+
+
+  
+  globalData: {
+    userInfo: null
+  }
+
+})
+
+
